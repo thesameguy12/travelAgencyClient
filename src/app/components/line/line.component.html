@@ -1,0 +1,18 @@
+<div *ngIf="loading">
+    <p>Loading</p>
+</div>
+<div *ngIf="lines.length!=0">
+    <div *ngFor="let line of lines" class="lineInfo">
+        <p>From: {{line.cityIdFrom.station}} - {{line.cityIdFrom.country}}</p>
+        <p>To: {{line.cityIdTo.station}} - {{line.cityIdTo.country}}</p>
+        <p>Travel duration: {{line.time}} hours</p>
+        <p>One way ticket price: {{line.oneWayTicketPrice}}e</p>
+        <p>Two way ticket price: {{line.twoWayTicketPrice}}e</p>
+        <button>Reserve</button>
+    </div>
+</div>
+
+<div *ngIf="cityIdFrom!=0 && cityIdTo!=0 && lines.length==0">
+    <p>No lines found.</p>
+</div>
+

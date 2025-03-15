@@ -1,0 +1,16 @@
+<h1>Krumpirica Transport</h1>
+<form [formGroup]="cityForm">
+    <label>From:</label>
+    <select formControlName="cityFrom" >
+        <option *ngFor="let city of cityes" [value]="city.id">
+            {{city.name}}, {{city.station}}
+        </option>
+    </select><br>
+    <label>To:</label>
+    <select formControlName="cityTo" >
+        <option *ngFor="let city of cityes" [value]="city.id">
+            {{city.name}}, {{city.station}}
+        </option>
+    </select>
+</form>
+<app-line [cityIdFrom]="cityForm.value.cityFrom ?? 0" [cityIdTo]="cityForm.value.cityTo ?? 0"></app-line>
