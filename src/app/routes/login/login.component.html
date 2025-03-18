@@ -1,0 +1,6 @@
+<form [formGroup]="userForm">
+    <label for="username">Username</label><input type="text" formControlName="username"><br>
+    <label for="password">Password</label><input type="password" formControlName="password">
+    <button (click)="login()">Login</button>
+    <p class="errorText">{{error}}</p>
+</form>

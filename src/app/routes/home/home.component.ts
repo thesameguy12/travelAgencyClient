@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit{
       })).subscribe({
         next:(data)=>{
           this.cityes=data
-          console.log(this.cityes)
+          
         },
         error:(err)=>{
           console.log(err)
