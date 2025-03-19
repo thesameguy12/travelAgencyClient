@@ -22,6 +22,7 @@ export class LoginComponent  {
     this.userForm.valueChanges.subscribe(()=>{
       this.error=""
     })
+    this.error=this.router.getCurrentNavigation()?.extras.state?.["error"] || ""
   }
   login(){
     const {username,password}=this.userForm.value
